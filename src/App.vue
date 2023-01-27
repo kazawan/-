@@ -3,9 +3,8 @@
 <template>
   <div class="papper">
     <template v-for="p in  papperList">
-      <p v-if="eidting"  @click="eidt" >{{ p.content }}</p>
-      <input v-else="!eidting" class="p1" type="text" placeholder="Plase input somethine" onfocus="this.placeholder='Please...'" onblur="this.placeholder='Plase input somethine'"
-       v-model="p.content"  @keydown.enter="createP" @keydown.esc="!eidting"  @keyup="titleCheck" />
+      <input class="p1" type="text" placeholder="Plase input somethine" onfocus="this.placeholder='Please...'" onblur="this.placeholder='Plase input somethine'"
+       v-model="p.content"  @keydown.enter="createP" @keydown.esc="cancelP"  @keyup="titleCheck" />
     </template>
     <input class="p1" type="text" placeholder="Plase input somethine" onfocus="this.placeholder='Please...'" onblur="this.placeholder='Plase input somethine'"
        v-model="pText"  @keydown.enter="createP" @keydown.esc="cancelP"  @keyup="titleCheck" />
@@ -63,7 +62,9 @@ export default {
 
 <style scoped>
 
-
+root{
+  --main:#303133
+}
 .papper {
   width: 100%;
   margin: 0;
@@ -73,17 +74,19 @@ export default {
 
 .p1 {
   width: 100%;
-  height: 24px;
+  
   border: 0ch;
   background-color: #F0F2F5;
   caret-color: #A8ABB2;
   outline: none;
-  font-weight: normal;
-  color: #303133;
+  font-family: "Noto Sans SC";
+  font-weight: 600;
+  color: var(--main);
+  
 }
 
 .p1:hover {
-  border-bottom: 1px solid #A8ABB2;
+  border-bottom: 1px solid #fdfdfd00;
 }
 </style>
 
