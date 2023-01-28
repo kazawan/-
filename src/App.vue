@@ -10,7 +10,7 @@
     <input class="p1" id="input_1" type="text" :placeholder="INPUT_placeholder" onfocus="this.placeholder='...'"
       onblur="this.placeholder=''" v-model="pText" @keydown.enter="createP" @keydown.esc="cancelP"
       @keydown.up="input_1moveup()" />
-
+    <div class="btn">kazawan...</div>
   </div>
 
 </template>
@@ -144,6 +144,24 @@ export default {
 root {
   --main: #303133
 }
+
+.btn{
+  width: 100px;
+  background-color: #110d0db6;
+  color: rgba(255, 255, 255, 0.788);
+  padding-left: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 24px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover{
+  background-color: rgb(153, 152, 152);
+  color: #110d0d;
+}
+
+
 
 .papper {
   width: 100%;
